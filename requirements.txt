@@ -12,3 +12,7 @@ seaborn
 # --- Untuk Data Analysis & Feature Engineering ---
 pandas
 numpy
+
+# --- Untuk Machine Learning ---
+scikit-learn
+joblib  
