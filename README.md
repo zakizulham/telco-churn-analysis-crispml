@@ -48,7 +48,7 @@ telco-churn-analysis-crispml/
 └── requirements.txt
 ```
 
-## Alur Kerja Analisis (Per Notebook)
+## Alur Kerja Analisis
 
 Setiap *notebook* dibangun di atas *notebook* sebelumnya, mengikuti alur kerja yang logis.
 
@@ -81,6 +81,22 @@ Setiap *notebook* dibangun di atas *notebook* sebelumnya, mengikuti alur kerja y
 * **Fase CRISP:** 4. Modeling (Unsupervised), 5. Evaluation.
 * **Tujuan:** Menggunakan K-Means Clustering untuk mengidentifikasi segmen nasabah (persona) alami tanpa menggunakan data `Churn` atau `TotalCharges`.
 * **Evaluasi:** Menggunakan **Elbow Method** dan **Silhouette Score** untuk memilih K optimal. Memvalidasi secara bisnis dengan menganalisis `Churn Rate` dan `MonthlyCharges` rata-rata per cluster yang ditemukan.
+
+Diagram alur kerja di bawah ini memvisualisasikan bagaimana setiap *notebook* berkontribusi pada analisis akhir.
+
+```mermaid
+graph LR;
+    A[00_Business_Data_Understanding] --> B(01_Data_Preparation);
+    
+    subgraph "Fase Pemodelan (Paralel)"
+        B -- Data Bersih --> C[02_Modeling_Cost_Regression_XAI];
+        B -- Data Bersih --> D[03_Modeling_High_Risk_Classification];
+        B -- Data Bersih --> E[04_Modeling_Risk_Pool_Clustering];
+    end
+    
+    C --> F(models/cost_regressor.joblib);
+    D --> G(models/high_risk_classifier.joblib);
+```
 
 ## Replikasi
 
