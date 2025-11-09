@@ -102,7 +102,7 @@ graph LR;
 
 Untuk mereplikasi analisis ini secara lokal:
 
-1.  Clone repositori ini: `git clone [URL_ANDA]`
+1.  Clone repositori ini: `git clone https://github.com/zakizulham/telco-churn-analysis-crispml.git`
 2.  Buat dan aktifkan *virtual environment*: `python -m venv venv && source venv/bin/activate`
 3.  Install dependensi: `pip install -r requirements.txt`
 4.  Unduh dataset dari [link Kaggle](https://www.kaggle.com/datasets/blastchar/telco-customer-churn) dan letakkan `WA_Fn-UseC_-Telco-Customer-Churn.csv` di dalam folder `data/raw/` (ganti nama menjadi `telco_churn.csv` agar lebih mudah).
