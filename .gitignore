@@ -1,0 +1,28 @@
+# .gitignore file ---
+# Data mentah dan data turunan
+/data/raw/*.csv
+/data/prepared/*.csv
+*.zip
+
+# Model ML yang sudah dilatih (Artefak)
+# Ini adalah output, bukan source code.
+/models/*.joblib
+/models/*.pkl
+
+# Dependensi & Cache Python
+venv/
+.venv/
+env/
+__pycache__/
+*.pyc
+
+# Checkpoint Jupyter Notebook
+.ipynb_checkpoints/
+
+# File Environment
+*.env
+.env
+
+# File Sistem Operasi
+.DS_Store
+Thumbs.db
